@@ -15,11 +15,11 @@
     --dark3: #3d4152;
     --prime1: #30e9b5;
     --prime2: #80d5a8;
-    --prime3: #2dbe95;
+    --prime3: #28af89;
     --white1: #ebebeb;
     --white2: #d1d1d1;
     --grey1: #5e5e5e;
-    --grey2: #818080;
+    --grey2: #9e9e9e;
 }
 
 body {
@@ -88,13 +88,35 @@ nav ul li a:hover {
     gap: 50px;
 }
 
-.profile-photo {
-    width: 300px;
-    height: 300px;
+.profile-photo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    background-color: var(--prime1);
-    /* You can replace this with an image */
+    background: linear-gradient(45deg, var(--prime1), var(--grey2));
+    padding: 2px;
+    transition: all 0.3s ease;
 }
+
+/* .profile-photo-area:hover {
+    box-shadow: 0 2px 15px 3px rgba(21, 223, 166, 0.471);
+} */
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid var(--dark1);
+    transition: all 0.3s ease;
+}
+
+/* .profile-photo:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+} */
 
 .hero-text {
     min-width: 500px;
@@ -117,7 +139,7 @@ h3#hero-greeting {
 }
 
 .hero-line-wrapper.first-line {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1;
 }
 
@@ -235,7 +257,7 @@ h3#hero-greeting {
 
 .btn-primary {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 10px 18px;
     background: linear-gradient(to right, var(--prime1), var(--prime3));
     color: var(--dark1);
     text-decoration: none;
@@ -297,6 +319,9 @@ h3#hero-greeting {
     padding: 5px 10px;
     margin-top: 10px;
     transition: color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .see-more-btn:hover {
@@ -323,12 +348,13 @@ h3#hero-greeting {
     margin: 0 auto;
 }
 
+
 .timeline::before {
     content: '';
     position: absolute;
-    width: 2px;
-    background-color: var(--prime1);
-    left: 150px;
+    width: 1px;
+    background-color: var(--grey2);
+    left: 200px;
     top: 0;
     bottom: 0;
 }
@@ -337,27 +363,32 @@ h3#hero-greeting {
     position: relative;
     margin-bottom: 50px;
     min-height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-.timeline-item:last-child {
-    margin-bottom: 0;
+.timeline-item.hidden-timeline-item {
+    display: none;
+}
+
+.timeline.expanded .timeline-item.hidden-timeline-item {
+    display: flex; /* Or block, depending on original display */
 }
 
 .timeline-year {
     position: absolute;
     left: 0;
-    width: 150px;
+    width: 180px; /* Aligns right edge with the timeline line */
     text-align: right;
-    top: 0;
-    font-weight: 400;
-    color: var(--prime2);
-    padding-right: 30px;
+    color: var(--grey2);
+    padding-right: 0; /* Ensures text aligns directly to the right edge */
     white-space: nowrap;
-    line-height: 150px;
 }
 
 .timeline-content {
-    margin-left: 180px;
+    margin-left: 230px;
     background-color: var(--dark1);
     padding: 20px 30px 20px 60px;
     border-radius: 8px;
@@ -380,11 +411,27 @@ h3#hero-greeting {
     height: 15px;
     border: 2px solid var(--prime1);
     border-radius: 50%;
-    background-color: var(--dark2);
+    background-color: var(--dark2); /* Default state */
     left: -38px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+    animation: blipNode 2s infinite alternate; /* Apply animation */
+}
+
+@keyframes blipNode {
+    0% {
+        background-color: var(--dark2);
+        box-shadow: 0 0 0 rgba(48, 233, 181, 0);
+    }
+    50% {
+        background-color: var(--prime1);
+        box-shadow: 0 0 10px var(--prime1); /* Glow effect */
+    }
+    100% {
+        background-color: var(--dark2);
+        box-shadow: 0 0 0 rgba(48, 233, 181, 0);
+    }
 }
 
 .timeline-content h3 {
@@ -569,22 +616,22 @@ h3#hero-greeting {
 }
 
 /* ==== Contact ==== */
+
 #contact {
     padding: 100px;
-    background-color: var(--prime1);
+    background-color: var(--dark2);
     text-align: center;
-    color: var(--dark1); /* Adjust text color for prime background */
+    color: var(--white1); /* Adjust text color for dark background */
 }
 
 #contact .section-title {
-    color: var(--dark1);
     margin-bottom: 20px;
 }
 
 .contact-message {
     font-size: 1.2em;
     margin-bottom: 40px;
-    color: var(--dark2);
+    color: var(--white2);
 }
 
 .contact-links {
@@ -595,7 +642,7 @@ h3#hero-greeting {
 }
 
 .contact-links a {
-    color: var(--dark1);
+    color: var(--prime1);
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
@@ -623,8 +670,8 @@ h3#hero-greeting {
     padding: 15px;
     border: none;
     border-radius: 5px;
-    background-color: var(--white1);
-    color: var(--dark1);
+    background-color: var(--dark1);
+    color: var(--white1);
     font-size: 1em;
 }
 
@@ -634,8 +681,8 @@ h3#hero-greeting {
 }
 
 .contact-form button {
-    background-color: var(--dark1);
-    color: var(--prime1);
+    background-color: var(--prime1);
+    color: var(--dark1);
     padding: 15px 25px;
     border: none;
     border-radius: 5px;
@@ -646,8 +693,8 @@ h3#hero-greeting {
 }
 
 .contact-form button:hover {
-    background-color: var(--dark3);
-    color: var(--white1);
+    background-color: var(--prime2);
+    color: var(--dark1);
 }
 
 footer {

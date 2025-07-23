@@ -30,7 +30,9 @@
 
         <section id="hero">
             <div class="hero-container">
-                <div class="profile-photo"></div>
+                <div class="profile-photo-area">
+                    <img src="img/myphoto.jpg" alt="My Profile Photo" class="profile-photo">
+                </div>
                 <div class="hero-text">
                     <h3 id="hero-greeting" class="hero-greeting">
                         <span class="hero-line-wrapper first-line">
@@ -40,8 +42,7 @@
                             <span id="suranjit-name"></span><span class="cursor suranjit-name-cursor"></span>
                         </span>
                     </h3>
-                    <h1 id="hero-roles-container"><span id="hero-intro">I am a </span><span id="hero-roles"></span><span
-                            class="cursor second-line-cursor"></span></h1>
+                    <h1 id="hero-roles-container"><span id="hero-intro">I am a </span><span id="hero-roles"></span><span class="cursor second-line-cursor"></span></h1>
                     <div class="social-links">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-github"></i></a>
@@ -67,7 +68,7 @@
                         interactive and automated dashboards using Power Bi. Highly adept in Geographic Information Systems
                         (GIS), with advanced skills in ArcGIS Pro. Proficient in database management with expertise in
                         PostgreSQL and MS Access. Additionally, I possess skills in designing compelling infographics using
-                        Illustrator and InDesign.
+                        Illustrator and InDesign. <br>
 
                         Currently serving as an MIS Coordinator at Winrock International, I specialize in developing and
                         maintaining robust MIS and GIS databases using tools like PostgreSQL, MS Access, ArcGIS Pro, and
@@ -78,7 +79,7 @@
                         MEAL Integrated Platform, supporting one of the world's largest refugee response programs. My work
                         involved database management, maintenance of the web application, GIS mapping, and crafting dynamic
                         dashboards using Power BI to monitor project progress and outcomes. I also conducted
-                        capacity-building sessions for teams on data analysis and visualization tools.
+                        capacity-building sessions for teams on data analysis and visualization tools. <br>
 
                         My academic background in business provided me with foundational knowledge in various disciplines,
                         including coursework in Statistics and Management Information Systems. These courses sparked my
@@ -252,36 +253,54 @@
 
         <section id="journey">
             <h2 class="section-title">My Journey</h2>
-            <div class="timeline">
+            <div class="timeline" id="journey-timeline-container">
                 <div class="timeline-item">
-                    <div class="timeline-year">2022 - Present</div>
+                    <div class="timeline-year">Apr 2025 - Present</div>
                     <div class="timeline-content">
                         <div class="timeline-icon"><i class="fa-solid fa-briefcase"></i></div>
-                        <h3>Senior Web Developer</h3>
-                        <p class="timeline-details">Tech Solutions Inc.</p>
+                        <h3>Sr. Software Engineer</h3>
+                        <p class="timeline-details">BRAC IT</p>
                         <p>Leading the development of scalable web applications and mentoring junior developers.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2018 - 2022</div>
+                    <div class="timeline-year">Aug 2024 - Mar 2025</div>
                     <div class="timeline-content">
-                        <div class="timeline-icon"><i class="fa-solid fa-user-graduate"></i></div>
-                        <h3>Bachelor of Science in Computer Science</h3>
-                        <p class="timeline-details">University of Technology</p>
+                        <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>MIS Coordinator</h3>
+                        <p class="timeline-details">Winrock International</p>
                         <p>Graduated with honors, focusing on web development and software engineering principles.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2021</div>
+                    <div class="timeline-year">May 2018 - Sep 2024</div>
                     <div class="timeline-content">
                         <div class="timeline-icon"><i class="fa-solid fa-briefcase"></i></div>
-                        <h3>Web Developer Intern</h3>
-                        <p class="timeline-details">Creative Agency</p>
-                        <p>Assisted in the development and maintenance of client websites using HTML, CSS, and
-                            JavaScript.</p>
+                        <h3>Deputy Manager, MIS</h3>
+                        <p class="timeline-details">BRAC</p>
+                        <p>Assisted in the development and maintenance of client websites using HTML, CSS, and JavaScript.</p>
                     </div>
                 </div>
-            </div>
+                <div class="timeline-item hidden-timeline-item">
+                    <div class="timeline-year">Jan 2017 - Apr 2018</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <h3>Junior Developer</h3>
+                        <p class="timeline-details">Web Solutions Co.</p>
+                        <p>Developed and maintained web applications using various front-end and back-end technologies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item hidden-timeline-item">
+                    <div class="timeline-year">Sep 2015 - Dec 2016</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>Intern</h3>
+                        <p class="timeline-details">Tech University</p>
+                        <p>Assisted in research projects and developed small utility scripts. Susing various front-end and back-end technologies.</p>
+                    </div>
+                </div>
+            </div>  
+            <button id="toggle-journey-button" class="see-more-btn">See More</button>
         </section>
 
         <section id="projects">
