@@ -74,7 +74,20 @@ nav ul li a:hover {
 
 /* ==== Hero ==== */
 
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2d3041;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    filter: blur(3px);
+}
+
 #hero {
+    position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -83,9 +96,11 @@ nav ul li a:hover {
 }
 
 .hero-container {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 }
 
 .profile-photo-area {
@@ -119,7 +134,7 @@ nav ul li a:hover {
 } */
 
 .hero-text {
-    min-width: 500px;
+    min-width: 650px;
 }
 
 h3#hero-greeting {

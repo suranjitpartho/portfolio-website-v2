@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const suranjitNameCursor = document.querySelector('.suranjit-name-cursor');
     const secondLineCursor = document.querySelector('.second-line-cursor');
 
-    const professions = [" Data Analyst", " BI Developer", " Software Developer"];
+    const professions = [" Data Analyst", " BI Developer", " Software Engineer"];
     let professionIndex = 0;
 
     const typeText = (element, text, speed, callback, cursorElement = null) => {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const startHeroAnimations = async () => {
         // Type "Hi There! This is "
-        await new Promise(resolve => typeText(heroGreetingPrefixSpan, "Hi there! This is ", 70, resolve, firstLineCursor));
+        await new Promise(resolve => typeText(heroGreetingPrefixSpan, "Hi there! I'm ", 70, resolve, firstLineCursor));
 
         // Type "SURANJIT."
         await new Promise(resolve => typeText(suranjitNameSpan, " Suranjit", 70, () => {
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, suranjitNameCursor));
 
         // Type "I am a "
-        await new Promise(resolve => typeText(heroIntroSpan, "I am a ", 70, resolve, secondLineCursor));
+        await new Promise(resolve => typeText(heroIntroSpan, "I build data-driven solutions as a ", 70, resolve, secondLineCursor));
 
         // Start looping professions
         loopProfessions();
