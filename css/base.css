@@ -27,8 +27,32 @@ body {
   color: var(--white1);
 }
 
+
+/* COMPONENTS */
+
 .section-title {
     text-align: center;
     font-size: 3em;
     margin-bottom: 50px;
+}
+
+.see-more-btn {
+    background: none;
+    border: 1px solid var(--grey2);
+    border-radius: 15px;
+    color: var(--grey2);
+    font-size: 1em;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 5px 14px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.see-more-btn:hover {
+    color: var(--prime1);
+    border: 1px solid var(--prime1);
 }
