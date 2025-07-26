@@ -1,0 +1,90 @@
+#contact {
+    padding: 100px;
+    background-color: var(--dark2);
+    text-align: center;
+    color: var(--white1); /* Adjust text color for dark background */
+}
+
+#contact .section-title {
+    margin-bottom: 20px;
+}
+
+.contact-message {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: var(--white2);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-links a {
+    color: var(--prime1);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: var(--white1);
+}
+
+.contact-links i {
+    margin-right: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dark1);
+    color: var(--white1);
+    font-size: 1em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--grey1);
+}
+
+.contact-form button {
+    background-color: var(--prime1);
+    color: var(--dark1);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: var(--prime2);
+    color: var(--dark1);
+}
+
+@media (max-width: 768px) {
+    #contact {
+        padding: 50px 20px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

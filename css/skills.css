@@ -1,0 +1,102 @@
+#skills {
+    padding: 100px;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 3em;
+    margin-bottom: 50px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+    gap: 40px; /* Increased gap */
+    max-width: 900px; /* Adjusted max-width */
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease; /* Add transition for smooth zoom */
+}
+
+.skill-item:hover {
+    transform: scale(0.95); /* Zoom out effect */
+}
+
+.skill-icon-circle {
+    background-color: var(--dark3);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+    position: relative; /* For positioning the SVG */
+    overflow: hidden; /* Hide parts of SVG outside the circle */
+}
+
+.skill-icon-circle:hover {
+    background-color: var(--dark2);
+}
+
+.skill-icon-circle i {
+    font-size: 3em;
+    color: var(--prime1);
+    position: relative; /* To keep icon above SVG */
+    z-index: 2; /* Ensure icon is above SVG */
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Start from the top */
+    z-index: 1; /* Ensure SVG is below icon */
+}
+
+.progress-ring-bg {
+    stroke: var(--dark2);
+}
+
+.progress-ring-fg {
+    stroke: var(--prime1);
+    transition: stroke-dashoffset 1.5s ease-out;
+    stroke-dasharray: 298.45;
+    stroke-dashoffset: 298.45;
+}
+
+.skill-item p {
+    font-size: 1.1em; /* Adjusted font size */
+    font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #skills {
+        padding: 50px 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
