@@ -33,10 +33,130 @@
     max-height: none; /* Allow content to expand fully */
 }
 
+/* Photo Viewer Styles */
+.photo-viewer-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Overall width of the viewer */
+    height: 350px; /* Fixed height for the viewer */
+    margin: 40px auto;
+    overflow: hidden; /* This will clip the side images that are too far */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(8, 255, 185, 0.3); /* Sci-fi glow */
+    background-color: var(--dark3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.photo-viewer-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.photo-display {
+    position: absolute; /* Position relative to photo-viewer-inner */
+    top: 0;
+    left: 0;
+    width: 100%; /* Take full width of inner container */
+    height: 100%; /* Take full height of inner container */
+    display: flex; /* Use flexbox to center the images within this area */
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-item {
+    position: absolute; /* Position absolutely within photo-display */
+    width: 60%; /* Make central image take up 60% of photo-display width */
+    height: 90%; /* Make central image take up 80% of photo-display height */
+    object-fit: contain; /* Ensures the whole image is visible within its bounds */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+    border-radius: 10px;
+    border: 1px solid rgba(230, 230, 230, 0.144);
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Disable interaction when hidden */
+    filter: blur(10px); /* Default blur for hidden items */
+    transform: scale(0.5); /* Make hidden items smaller */
+    z-index: 0; /* Default z-index */
+}
+
+.photo-item.active {
+    transform: translateX(0) scale(1); /* Centered and full size */
+    opacity: 1;
+    z-index: 2;
+    filter: blur(0); /* No blur for active item */
+    pointer-events: auto; /* Enable interaction for active item */
+}
+
+.photo-item.next {
+    /* Position to the right of the active image, partially visible */
+    transform: translateX(calc(50% + 10px)) scale(0.6); /* Move right, scaled, with a gap */
+    opacity: 0.2; /* More transparent */
+    z-index: 1; /* Behind active */
+    filter: blur(8px); /* More blur */
+    pointer-events: auto;
+}
+
+.photo-item.prev {
+    /* Position to the left of the active image, partially visible */
+    transform: translateX(calc(-50% - 10px)) scale(0.6); /* Move left, scaled, with a gap */
+    opacity: 0.2; /* More transparent */
+    z-index: 1; /* Behind active */
+    filter: blur(8px); /* More blur */
+    pointer-events: auto;
+}
+
+.nav-arrow {
+    border: none;
+    background: rgba(224, 224, 224, 0.2);
+    color: var(--white1);
+    font-size: 1em;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.nav-arrow:hover {
+    background: rgba(224, 224, 224, 0.3);
+    color: var(--prime1);
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
 
 @media (max-width: 768px) {
     #about {
         padding: 50px 20px;
+    }
+
+    .photo-viewer-container {
+        height: 250px; /* Adjust height for smaller screens */
+        margin: 20px auto;
+    }
+
+    .nav-arrow {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-viewer-container {
+        height: 200px;
     }
 }
