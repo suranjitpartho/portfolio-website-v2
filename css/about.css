@@ -42,12 +42,13 @@
     margin: 40px auto;
     overflow: hidden; /* This will clip the side images that are too far */
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(8, 255, 185, 0.3); /* Sci-fi glow */
-    background-color: var(--dark3);
+    border: 1px solid rgba(230, 230, 230, 0.144);
+    background-color: var(--dark1);
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 .photo-viewer-inner {
     display: flex;
